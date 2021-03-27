@@ -1,0 +1,13 @@
+name: Fluidity tests
+
+on:
+  push:
+    branches:
+      - actions
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Null
+        run: true
