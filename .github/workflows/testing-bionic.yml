@@ -9,7 +9,7 @@ on:
       - master
 
 env: 
-  container: "fluidity/actions:bionic-:${{ github.sha }}"
+  container: "fluidity/actions:bionic-${{ github.sha }}"
 
 jobs:
 
@@ -46,4 +46,4 @@ jobs:
      - name: Unit testing
        run: |
          docker pull ${{ env.container }}
-         docker run -v $PWD:/host -w /home/fluidity/fluidity ${{ env.container }} make unittest
+         docker run -v $PWD:/host ${{ env.container }} make unittest
