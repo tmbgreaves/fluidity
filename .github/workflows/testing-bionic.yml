@@ -43,4 +43,4 @@ jobs:
      - name: Unit testing
        run: |
          docker pull ${{ env.container }}
-         docker run -v $PWD:/host -w /host ${{ env.container }} true
+         docker run -v $PWD:/host -w /home/fluidity/fluidity ${{ env.container }} make unittest
