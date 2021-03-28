@@ -1,4 +1,4 @@
-FROM: fluidity/baseimages:bionic
+FROM fluidity/baseimages:bionic
 
 USER root
 RUN apt-get -y update
