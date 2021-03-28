@@ -52,3 +52,25 @@ jobs:
        run: |
          docker pull ${{ env.container }}
          docker run -v $PWD:/host ${{ env.container }} make unittest
+
+  shorttest: 
+
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+     - name: Short testing
+       run: |
+         docker pull ${{ env.container }}
+         docker run -v $PWD:/host ${{ env.container }} make test
+
+  mediumtest: 
+
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+     - name: Medium testing
+       run: |
+         docker pull ${{ env.container }}
+         docker run -v $PWD:/host ${{ env.container }} make mediumtest
