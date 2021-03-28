@@ -8,6 +8,9 @@ on:
     branches:
       - master
 
+env: 
+  container: "fluidity/actions:bionic-:${{ github.sha }}"
+
 jobs:
 
   build:
@@ -32,7 +35,7 @@ jobs:
           context: .
           file: docker/actions/Dockerfile.actions.bionic
           push: true
-          tags: fluidity/actions:bionic-${{ github.sha }}
+          tags: ${{ env.container }}
           
   unittest: 
 
