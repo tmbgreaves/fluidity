@@ -1,0 +1,17 @@
+FROM: fluidity/baseimages:bionic
+
+USER root
+RUN apt-get -y update
+RUN apt-get -y dist-upgrade
+
+USER fluidity
+
+ADD fluidity /home/fluidity
+
+WORKDIR /home/fluidity/fluidity
+
+ENV PETSC_DIR /usr/lib/petscdir/3.8
+
+RUN ./configure --enable-2d-adaptivity
+RUN make
+RUN make fltools
