@@ -32,7 +32,7 @@ jobs:
           context: .
           file: docker/actions/Dockerfile.actions.bionic
           push: true
-          tags: ${{ env.container }}
+          tags: fluidity/actions:bionic-${{ github.sha }}
           
   unittest: 
 
