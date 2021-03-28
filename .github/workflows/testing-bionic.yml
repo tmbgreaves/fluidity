@@ -49,8 +49,7 @@ jobs:
 
       matrix:
 
-#        name: [ "Unit", "Short", "Medium" ]
-        name: [ "Unit" ]
+        name: [ "Unit", "Short"]
           
         include:
           - name: "Unit"
@@ -60,11 +59,7 @@ jobs:
           - name: "Short"
             command: "make test"
             output: "tests/test_results.xml"
-          
-          - name: "Medium"
-            command: "make mediumtest"
-            output: "tests/test_results_medium.xml"
-            
+
     steps:
       - name: ${{ matrix.name }}
         run: |
