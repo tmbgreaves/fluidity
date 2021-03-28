@@ -8,8 +8,6 @@ RUN chown -R fluidity /home/fluidity
 
 USER fluidity
 
-ENV PETSC_DIR /usr/lib/petscdir/3.8
-
 RUN ./configure --enable-2d-adaptivity
 RUN make
 RUN make fltools
