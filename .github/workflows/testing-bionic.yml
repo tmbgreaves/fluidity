@@ -75,4 +75,4 @@ jobs:
           report_paths: ${{ matrix.output }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
           check_name: ${{ matrix.name }} test report
-          fail_on_failure: true
+          fail_on_failure: false
