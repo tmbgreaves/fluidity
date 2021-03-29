@@ -1,7 +1,11 @@
 FROM fluidity/baseimages:bionic
 
 USER root
-RUN apt-get -y update && apt-get -y dist-upgrade && rm -f /var/cache/apt/archives/*deb
+
+RUN apt-get -y update && \
+      apt-get -y dist-upgrade && \
+      rm -rf /var/cache/apt/archives && \
+      rm -rf /var/lib/apt/lists
 
 COPY . /home/fluidity
 RUN chown -R fluidity /home/fluidity
